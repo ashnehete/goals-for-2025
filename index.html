@@ -3,53 +3,68 @@
 <head>
     <title>Goals for 2025</title>
     <link rel="stylesheet" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Playwrite+AU+SA:wght@100..400&display=swap"
+          rel="stylesheet">
 </head>
 <body>
 
-<div class="wrapper">
-    <div class="container">
-        <div class="grid-item grid-item--bg"></div>
-        <div class="grid-item" style="grid-column: 2 / span 2">
-            <header class="borel-regular">Goals for 2025</header>
-        </div>
-        <!--        Divider Row Start-->
-        <div class="grid-item grid-item--bg-2"></div>
-        <div class="grid-item grid-item--bg-2"></div>
-        <div class="grid-item grid-item--bg-2"></div>
-        <!--        Divider Row End-->
-        <div class="grid-item grid-item--bg">
-            <span>Write</span>
-            <span>10 essays about anything</span>
-            <ol>
-                <li>My Master's in Computer Science</li>
-            </ol>
-        </div>
+<div class="container">
+    <div class="grid-item" style="grid-column: 1 / 4">
+        <header class="playwrite-au-sa-400">Goals for 2025</header>
+    </div>
+    <div class="grid-item grid-item--bg-2 playwrite-au-sa-400" id="today" style="grid-column: 1 / 4"></div>
+    <div class="grid-item grid-item--bg goal">
+        <div class="goal-title playwrite-au-sa-400">Write</div>
+        <div class="goal-subtitle">10 essays about anything</div>
+        <ol>
+            <li>My Master's in Computer Science</li>
+        </ol>
+    </div>
 
-        <div class="grid-item grid-item--bg">
-            <span>Exercise</span>
-            <span>At least twice a week</span>
-            <div class="calendar">
-                <div class="week">1</div>
-                <div class="day"></div>
-                <div class="day" data-level="1"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day" data-level="2"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="week">2</div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day" data-level="3"></div>
-            </div>
+    <div class="grid-item grid-item--bg goal">
+        <div class="goal-title playwrite-au-sa-400">Exercise</div>
+        <div class="goal-subtitle">At least twice a week</div>
+        <div class="calendar">
+            <div></div>
+            <div class="week">S</div>
+            <div class="week">M</div>
+            <div class="week">T</div>
+            <div class="week">W</div>
+            <div class="week">T</div>
+            <div class="week">F</div>
+            <div class="week">S</div>
+            <div class="week">1</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="day"></div>
+            <div class="day" data-level="1"></div>
+            <div class="day"></div>
+            <div class="day"></div>
+            <div class="week">2</div>
+            <div class="day"></div>
+            <div class="day"></div>
+            <div class="day" data-level="1"></div>
         </div>
+    </div>
 
-        <div class="grid-item grid-item--bg"></div>
+    <div class="grid-item grid-item--bg goal">
+        <div class="goal-title playwrite-au-sa-400">Read</div>
+        <div class="goal-subtitle">6 books about anything</div>
+        <ol>
+            <li>
+                <a href="https://app.thestorygraph.com/books/cbf30b75-b17c-4bef-983e-4a86dc92e7fc" target="_blank">
+                    The Unicorn Project
+                </a>
+            </li>
+        </ol>
     </div>
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1,12 +1,22 @@
 :root {
     --color-background-primary: white;
-    --color-background-secondary: black;
-    --color-background-tertiary: #808080;
+    --color-background-secondary:var(--oxford-blue);
+    --color-background-tertiary: var(--khaki);
 
-    --color-text-primary: black;
-    --color-text-secondary: white;
+    --color-text-primary: var(--oxford-blue);
+    --color-text-secondary: var(--dun);
+    --color-text-tertiary: white;
 
-    --font-title: "Playwrite AU SA", serif;
+    --font-title: "Montserrat", serif;
+
+    --square-size: 15px;
+    --square-gap: 5px;
+
+    --oxford-blue: #161F3Bff;
+    --ash-gray: #9FB7BAff;
+    --khaki: #B6A68Dff;
+    --dun: #E4D1B0ff;
+    --charcoal: #3F4851ff;
 }
 
 body {
@@ -19,6 +29,10 @@ body {
     font-style: normal;
 }
 
+a {
+    color: var(--color-text-secondary);
+}
+
 
 .container {
     display: grid;
@@ -27,13 +41,24 @@ body {
 
     width: 80%;
     max-width: 1024px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
-header {
-    text-align: center;
-    font-size: 5rem;
+.header {
+    grid-column: 2 / 4;
+    justify-self: center;
+    align-self: center;
+
     font-family: var(--font-title);
+    font-size: 5rem;
+    font-weight: 500;
+}
+
+.header-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 #today {
@@ -41,6 +66,8 @@ header {
     text-align: center;
     font-family: var(--font-title);
     font-weight: 200;
+    color: var(--color-text-tertiary);
+    letter-spacing: 2px;
 }
 
 .grid-item {
@@ -58,37 +85,69 @@ header {
     color: var(--color-text-secondary);
 }
 
+.goal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .goal-title {
     font-family: var(--font-title);
     font-size: 1.5rem;
     margin-top: 8px;
     margin-bottom: 16px;
-    text-align: center;
+    letter-spacing: 2px;
 }
 
 .goal-subtitle {
     font-size: 1.2rem;
-    text-align: center;
     margin-bottom: 20px;
 }
 
 
+/* -- CALENDAR --*/
+.weeks {
+    grid-area: weeks;
+}
+
+.days {
+    grid-area: days;
+}
+
+.squares {
+    grid-area: squares;
+}
+
 .calendar {
+    display: inline-grid;
+    grid-template-areas: "empty days" "weeks squares";
+    grid-gap: 10px;
+}
+
+.days,
+.squares {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-gap: 5px;
-    width: 155px;
-    margin: 20px auto;
+    grid-gap: var(--square-gap);
+    grid-template-columns: repeat(7, var(--square-size));
 }
 
-.week {
-    width: 15px;
-    height: 15px;
-    font-size: 0.8rem;
-    text-align: center;
+.squares {
+    grid-auto-flow: row;
+    grid-auto-rows: var(--square-size);
 }
 
-.day {
+.weeks {
+    display: grid;
+    grid-gap: var(--square-gap);
+    grid-auto-columns: var(--square-size);
+}
+
+.weeks, .days {
+    font-size: 0.7rem;
+    justify-items: center;
+}
+
+.squares > span {
     width: 15px;
     height: 15px;
     background-color: var(--color-background-primary);
@@ -96,6 +155,7 @@ header {
     border-radius: 4px;
 }
 
-.day[data-level="1"] {
+.squares > span[data-level="1"] {
     opacity: 1;
 }
+/* -- CALENDAR --*/

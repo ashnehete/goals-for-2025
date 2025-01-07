@@ -12,7 +12,7 @@ function addExercise() {
     const startDate = new Date('2025-01-01');
     const today = new Date();
     const timeDiff = today.getTime() - startDate.getTime();
-    const dayCount = Math.floor(timeDiff / (1000 * 60 * 60 * 24)); // Calculate the number of days
+    const dayCount = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); // Calculate the number of days
 
     for (let i = 0; i < dayCount; i++) {
         const span = document.createElement('span');

@@ -1,11 +1,11 @@
 :root {
     --color-background-primary: white;
-    --color-background-secondary:var(--oxford-blue);
-    --color-background-tertiary: var(--khaki);
+    --color-background-secondary: var(--blue-1);
+    --color-background-tertiary: var(--dun);
 
     --color-text-primary: var(--oxford-blue);
-    --color-text-secondary: var(--dun);
-    --color-text-tertiary: white;
+    --color-text-secondary: var(--blue-2);
+    --color-text-tertiary: var(--khaki);
 
     --font-title: "Montserrat", serif;
 
@@ -14,16 +14,19 @@
 
     --oxford-blue: #161F3Bff;
     --ash-gray: #9FB7BAff;
-    --khaki: #B6A68Dff;
+    --khaki: #87775f;
     --dun: #E4D1B0ff;
     --charcoal: #3F4851ff;
+
+    --blue-1: #bbd1d7;
+    --blue-2: #2A4B69;
 }
 
 body {
     background: var(--color-background-primary);
     color: var(--color-text-primary);
 
-    font-family: "Lexend", serif;
+    font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
@@ -46,7 +49,7 @@ a {
 
 .header {
     grid-column: 2 / 4;
-    justify-self: center;
+    justify-self: start;
     align-self: center;
 
     font-family: var(--font-title);
@@ -64,10 +67,8 @@ a {
 #today {
     font-size: 1.5rem;
     text-align: center;
-    font-family: var(--font-title);
-    font-weight: 200;
-    color: var(--color-text-tertiary);
     letter-spacing: 2px;
+    font-weight: 500;
 }
 
 .grid-item {
@@ -82,7 +83,9 @@ a {
 
 .grid-item--bg-2 {
     background: var(--color-background-tertiary);
-    color: var(--color-text-secondary);
+    font-family: var(--font-title);
+    font-weight: 200;
+    color: var(--color-text-tertiary);
 }
 
 .goal {
@@ -102,6 +105,11 @@ a {
 .goal-subtitle {
     font-size: 1.2rem;
     margin-bottom: 20px;
+}
+
+.quote {
+    background: var(--blue-2);
+    color: var(--ash-gray);
 }
 
 
@@ -158,4 +166,5 @@ a {
 .squares > span[data-level="1"] {
     opacity: 1;
 }
+
 /* -- CALENDAR --*/

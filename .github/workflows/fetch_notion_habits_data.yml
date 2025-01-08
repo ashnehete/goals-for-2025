@@ -1,0 +1,36 @@
+name: Fetch Notion Habits Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run daily at midnight
+
+jobs:
+  fetch_notion_habits_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          npm install @notionhq/client
+
+      - name: Fetch data from Notion
+        id: notion_habits_data
+        run: |
+          NOTION_API_KEY='${{ secrets.NOTION_API_KEY }}'
+          NOTION_DATABASE_ID='${{ vars.NOTION_HABITS_DATABASE_ID }}'
+
+          node fetch_data.js
+
+      - name: Save data to file
+        uses: actions/write-file@v3
+        with:
+          path: data.json
+          content: ${{ steps.notion_habits_data.outputs.data }}
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Update data.json from Notion'
+          file_pattern: 'data.json'

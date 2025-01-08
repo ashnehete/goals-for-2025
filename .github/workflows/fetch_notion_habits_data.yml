@@ -1,8 +1,9 @@
-name: Fetch Notion Habits Data
+name: fetch-notion-data
 
 on:
   schedule:
     - cron: '0 0 * * *' # Run daily at midnight
+  workflow_dispatch:
 
 jobs:
   fetch_notion_habits_data:

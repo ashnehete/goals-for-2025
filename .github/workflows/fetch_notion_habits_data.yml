@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  fetch_notion_habits_data:
+  fetch_notion_data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -17,7 +17,7 @@ jobs:
           npm install @notionhq/client
 
       - name: Fetch data from Notion
-        id: notion_habits_data
+        id: notion_data
         run: |
           NOTION_API_KEY='${{ secrets.NOTION_API_KEY }}'
           NOTION_DATABASE_ID='${{ vars.NOTION_HABITS_DATABASE_ID }}'
@@ -25,10 +25,10 @@ jobs:
           node fetch_data.js
 
       - name: Save data to file
-        uses: actions/write-file@v3
+        uses: DamianReeves/write-file-action@master
         with:
           path: data.json
-          content: ${{ steps.notion_habits_data.outputs.data }}
+          content: ${{ steps.notion_data.outputs.data }}
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v4

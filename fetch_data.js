@@ -27,9 +27,15 @@ async function fetchData() {
         });
 
         // Process exercise data
-        const processedData = response.results.map((page) => (
+        const exerciseData = response.results.map((page) => (
             page.properties.Swimming.checkbox || page.properties.Gym.checkbox || page.properties.Badminton.checkbox
         ));
+
+        const processedData = {
+            exercise: {
+                calendar: exerciseData
+            }
+        }
 
         // Convert data to JSON string
         const jsonData = JSON.stringify(processedData, null, 2);

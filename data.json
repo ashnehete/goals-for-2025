@@ -2,6 +2,7 @@
   "exercise": {
     "calendar": [
       false,
+      true,
       false,
       true,
       false,

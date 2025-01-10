@@ -15,15 +15,15 @@ async function fetchData() {
                         "date": {
                             "on_or_after": "2025-01-01"
                         }
-                    },
-                    {
-                        "property": "Created time",
-                        "date": {
-                            "on_or_before": "2025-12-31"
-                        }
                     }
                 ]
-            }
+            },
+            sorts: [
+                {
+                    "property": "Created time",
+                    "direction": "ascending"
+                }
+            ]
         });
 
         // Process exercise data

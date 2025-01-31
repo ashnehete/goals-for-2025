@@ -1,6 +1,6 @@
 function displayToday() {
     const today = new Date();
-    const options = {weekday: 'long', month: 'long', day: 'numeric'};
+    const options = { weekday: 'long', month: 'long', day: 'numeric' };
     const formattedDate = today.toLocaleDateString('en-US', options);
 
     const dateDiv = document.querySelector('#today');
@@ -20,6 +20,16 @@ function addExercise(exerciseCalendar) {
     });
 }
 
+function addWeeks(weeks) {
+    const weeksDiv = document.querySelector('#exercise_weeks');
+
+    for (let i = 1; i <= weeks; i++) {
+        const span = document.createElement('span');
+        span.textContent = i;
+        weeksDiv.appendChild(span);
+    }
+}
+
 // Use the window.onload event to call the function
 window.onload = function () {
     displayToday();
@@ -29,6 +39,9 @@ window.onload = function () {
         .then(data => {
             if (data.exercise && data.exercise.calendar) {
                 addExercise(data.exercise.calendar);
+
+                const weeks = Math.ceil((data.exercise.calendar.length + 3) / 7)
+                addWeeks(weeks)
             }
         })
         .catch(error => console.error('Error fetching data:', error));

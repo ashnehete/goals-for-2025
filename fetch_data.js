@@ -1,7 +1,7 @@
 const core = require('@actions/core')
-const {Client} = require('@notionhq/client');
+const { Client } = require('@notionhq/client');
 
-const notion = new Client({auth: process.env.NOTION_API_KEY});
+const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
 async function fetchData() {
     try {

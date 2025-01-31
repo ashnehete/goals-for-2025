@@ -160,20 +160,22 @@ a {
     grid-auto-columns: var(--square-size);
 }
 
-.weeks, .days {
+.weeks,
+.days {
     font-size: 0.7rem;
     justify-items: center;
+    line-height: var(--square-size);
 }
 
-.squares > span {
-    width: 15px;
-    height: 15px;
+.squares>span {
+    width: var(--square-size);
+    height: var(--square-size);
     background-color: var(--color-background-primary);
     opacity: 0.25;
     border-radius: 4px;
 }
 
-.squares > span[data-level="1"] {
+.squares>span[data-level="1"] {
     opacity: 1;
 }
 

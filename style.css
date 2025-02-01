@@ -131,6 +131,9 @@ a {
 .goal li {
     display: flex;
     gap: 5px;
+}
+
+.goal li>input {
     pointer-events: none;
 }
 

@@ -122,6 +122,20 @@ a {
     text-align: center;
 }
 
+/* -- CHECKBOX -- */
+
+.goal ul {
+    list-style-type: none;
+}
+
+.goal li {
+    display: flex;
+    gap: 5px;
+    pointer-events: none;
+}
+
+/* -- CHECKBOX -- */
+
 
 /* -- CALENDAR --*/
 .weeks {

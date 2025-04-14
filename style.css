@@ -126,6 +126,7 @@ a {
 
 .goal ul {
     list-style-type: none;
+    padding: 0;
 }
 
 .goal li {
